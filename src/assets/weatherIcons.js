@@ -1,0 +1,10 @@
+export const sn = 'https://www.metaweather.com/static/img/weather/sn.svg'   //snow
+export const sl = 'https://www.metaweather.com/static/img/weather/sn.svg'   //sleet
+export const h = 'https://www.metaweather.com/static/img/weather/sn.svg'    //hail
+export const t = 'https://www.metaweather.com/static/img/weather/sn.svg'    //thunderstorm
+export const hr = 'https://www.metaweather.com/static/img/weather/sn.svg'   //heavy rain
+export const lr = 'https://www.metaweather.com/static/img/weather/sn.svg'   //light rain
+export const s = 'https://www.metaweather.com/static/img/weather/sn.svg'    //showers
+export const hc = 'https://www.metaweather.com/static/img/weather/sn.svg'   //heavy cloud
+export const lc = 'https://www.metaweather.com/static/img/weather/sn.svg'   //light cloud
+export const c = 'https://www.metaweather.com/static/img/weather/sn.svg'    //clear
