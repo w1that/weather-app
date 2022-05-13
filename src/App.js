@@ -9,6 +9,7 @@ import { c, h, hc, hr, lc, lr, s, sl, sn, t } from "./assets/weatherIcons";
 import { useEffect, useState } from "react";
 import { getConsolidatedWeatherReport, getWoeId } from "./api/WeatherService";
 import { dateShortener, weatherIconSelector } from "./utils/utils";
+import DaysWrapper from "./components/DaysWrapper";
 
 function App() {
   const fakeData = {
@@ -31,7 +32,7 @@ function App() {
         weather_state_name: "Heavy Cloud",
         weather_state_abbr: "hc",
         wind_direction_compass: "WSW",
-        min_temp: 9.620000000000001,
+        min_temp: 9.300001,
         max_temp: 19.935,
         the_temp: 18.240000000000002,
         wind_speed: 8.787753098830828,
@@ -143,7 +144,12 @@ function App() {
       </div>
 
       {/* right hand */}
-      <div className={styles.detailsFieldContainer}></div>
+      <div className={styles.detailsFieldContainer}>
+          <div className={styles.detailsFieldInnerContainer}>
+          <DaysWrapper nextFiveDaysConditions={consolidatedWeather.fakeData.consolidated_weather.slice(1,6)}/>
+          </div>
+
+      </div>
     </div>
   );
 }

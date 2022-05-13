@@ -63,6 +63,10 @@ h5{
     flex: 2;
 }
 
+.detailsFieldInnerContainer{
+    padding: 148px 123px 154px 154px;
+}
+
 .backgroundPatternContainer{
     width: 132%;
     height: 376px;
@@ -72,7 +76,7 @@ h5{
 }
 
 .cloud1{
-    opacity: 5%;
+    opacity: 8%;
     left: 22px;
     position: absolute;
     width: 203px;
@@ -95,7 +99,7 @@ h5{
 }
 
 .cloud4{
-    opacity: 5%;
+    opacity: 8%;
     position: absolute;
     right: 69px;
     bottom: 0px;
