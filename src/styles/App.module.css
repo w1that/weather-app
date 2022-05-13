@@ -1,0 +1,169 @@
+*{
+    font-family: 'Raleway';
+}
+
+h5{
+    margin: 0px;
+}
+
+.container{
+    display: flex;
+}
+
+.leftSideContainer{
+    background-color: #1E213A;
+    height: 100vh;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+}
+
+.buttonsWrapper{
+    display: flex;
+    justify-content: space-between;
+    padding:  42px 46px 0px 46px;
+    margin-bottom: 109px;
+}
+
+.searchPlacesButton{
+    padding: 11px 18px 10px 18px;
+    background-color: #6E707A;
+    cursor: pointer;
+    color: #E7E7EB;
+    border: 0px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-size: 16px;
+}
+
+.locationButton{
+    display: flex;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    justify-content: center;
+    border: 0px;
+    align-items: center;
+    border-radius: 100px;
+    background: rgba(255, 255, 255, 0.2);;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.crossHairIcon{
+
+}
+
+.detailsFieldContainer{
+    background-color: #100E1D;
+    height: 100vh;
+    flex: 2;
+}
+
+.backgroundPatternContainer{
+    width: 132%;
+    height: 376px;
+    position: absolute;
+    left: -111px;
+    top: 103px;
+}
+
+.cloud1{
+    opacity: 5%;
+    left: 22px;
+    position: absolute;
+    width: 203px;
+}
+
+.cloud2{
+    opacity: 5%;
+    position: absolute;
+    right: 0px;
+    top: 13px;
+}
+
+.cloud3{
+    opacity: 5%;
+    position: absolute;
+    left: 0px;
+    bottom: 30px;
+    width: 248px;
+    height: 183px;
+}
+
+.cloud4{
+    opacity: 5%;
+    position: absolute;
+    right: 69px;
+    bottom: 0px;
+    width: 147px;
+    height: 109px;
+}
+
+.summaryInfoContainer{
+    margin-bottom: 52px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+}
+
+.todaysConditionImage{
+    margin-bottom: 60px;
+}
+
+.numericTemperature{
+    font-size: 144px;
+    font-weight: 500;
+    color: #E7E7EB;
+    margin-bottom: 87px;
+}
+
+.temperatureSymbol{
+    font-size: 48px;
+    opacity: 50%;
+}
+
+.conditionTitle{
+    color: #A09FB1;
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.dateContainer{
+    display: flex;
+    margin-bottom: 32px;
+}
+
+.day{
+    font-size: 18px;
+    font-weight: 500;
+    color: #88869D;
+    margin-right: 16px;
+}
+
+.dot{
+    font-size: 18px;
+    font-weight: 500;
+    color: #88869D;
+    margin-right: 16px;
+}
+
+.date{
+    font-size: 18px;
+    font-weight: 500;
+    color: #88869D;
+}
+
+.place{
+    color: #88869D;
+    display: flex;
+    align-items: center;
+    font-weight: 699;
+    font-size: 18px;
+}
+
+.markerIcon{
+    margin-right: 9px;
+}
