@@ -1,0 +1,150 @@
+.container {
+  margin-top: 72px;
+  width: 704px;
+}
+
+.title {
+  color: #e7e7eb;
+  font-size: 24px;
+  font-weight: 700;
+}
+.cardTitle {
+  color: #e7e7eb;
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 22px;
+  margin-bottom: 6px;
+}
+
+.aboveCardsContainer {
+  display: flex;
+  margin-top: 32px;
+  margin-bottom: 48px;
+}
+
+.windCard {
+  width: 328px;
+  height: 204px;
+  background-color: #1e213a;
+  margin-right: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.speed {
+  font-size: 64px;
+  color: #e7e7eb;
+  font-weight: 700;
+  margin-bottom: 17px;
+}
+
+.mph {
+  font-size: 36px;
+  color: #e7e7eb;
+  font-weight: 500;
+}
+
+.arrowIconWrapper {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  margin-right: 5.71px;
+}
+
+.arrowIcon {
+  border-radius: 50px;
+  width: 30px;
+  height: 30px;
+  transform: rotate(-180deg);
+}
+
+.compass {
+  color: white;
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 25px;
+}
+
+.humidityCard {
+  width: 328px;
+  height: 204px;
+  background-color: #1e213a;
+  color: #e7e7eb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.humidityPercentage {
+  font-size: 64px;
+  font-weight: 700;
+  margin-top: 5px;
+}
+
+.percent {
+  font-size: 36px;
+  font-weight: 400;
+}
+
+.bar {
+  width: 229px;
+  height: 8px;
+  background-color: #e7e7eb;
+  border-radius: 80px;
+}
+
+.belowCardsContainer {
+  display: flex;
+}
+
+.visibilityCard {
+  width: 328px;
+  height: 159px;
+  background-color: #1e213a;
+  margin-right: 48px;
+  margin-bottom: 37px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.windSpeed {
+  font-size: 64px;
+  font-weight: 700;
+  color: #e7e7eb;
+}
+
+.miles {
+  font-size: 26px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.airPressureCard {
+  width: 328px;
+  height: 159px;
+  background-color: #1e213a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.airPressure {
+  font-size: 64px;
+  font-weight: 700;
+  color: #e7e7eb;
+}
+
+.mb {
+  font-size: 26px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}

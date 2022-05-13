@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import { getConsolidatedWeatherReport, getWoeId } from "./api/WeatherService";
 import { dateShortener, weatherIconSelector } from "./utils/utils";
 import DaysWrapper from "./components/DaysWrapper";
+import TodaysHightlightsWrapper from "./components/TodaysHightlightsWrapper";
 
 function App() {
   const fakeData = {
@@ -101,7 +102,7 @@ function App() {
     coords: { latitude: 51.506321, longitude: -0.12714 },
   }); //Istanbul by default
   const [woeId, setWoeId] = useState(44418); //used for taking 6 day weather report. (Where On Earth IDentifier). Woeid of Istanbul by default
-  const [consolidatedWeather, setConsolidatedWeather] = useState({fakeData}); //6 day weather report.
+  const [consolidatedWeather, setConsolidatedWeather] = useState({ fakeData }); //6 day weather report.
   // const [loading, setLoading] = useState(true);
 
   // useEffect(() => {
@@ -124,9 +125,24 @@ function App() {
 
   return (
     <div className={styles.container}>
-      <motion.div animate={{x:-2000, display:'none'}} transition={{x:{delay:1,duration:1}, display:{delay:3}}} style={{background:'black', width:'100%', height:'100vh', position:'absolute', zIndex:3, display:'flex', justifyContent:'center', alignItems:'center'}}>
-      <h1 style={{fontFamily:'Raleway', color:'white', fontSize:46}}>WEATHER APP</h1>
-    </motion.div>
+      <motion.div
+        animate={{ x: -2000, display: "none" }}
+        transition={{ x: { delay: 1, duration: 1 }, display: { delay: 3 } }}
+        style={{
+          background: "black",
+          width: "100%",
+          height: "100vh",
+          position: "absolute",
+          zIndex: 3,
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <h1 style={{ fontFamily: "Raleway", color: "white", fontSize: 46 }}>
+          5 DAYS WEATHER FORECAST
+        </h1>
+      </motion.div>
       {/* left hand */}
       <div className={styles.leftSideContainer}>
         <BackgroundPattern />
@@ -145,10 +161,19 @@ function App() {
 
       {/* right hand */}
       <div className={styles.detailsFieldContainer}>
-          <div className={styles.detailsFieldInnerContainer}>
-          <DaysWrapper nextFiveDaysConditions={consolidatedWeather.fakeData.consolidated_weather.slice(1,6)}/>
-          </div>
-
+        <div className={styles.detailsFieldInnerContainer}>
+          <DaysWrapper
+            nextFiveDaysConditions={consolidatedWeather.fakeData.consolidated_weather.slice(
+              1,
+              6
+            )}
+          />
+          <TodaysHightlightsWrapper
+            consolidatedWeather={
+              consolidatedWeather.fakeData.consolidated_weather[0]
+            }
+          />
+        </div>
       </div>
     </div>
   );
@@ -223,8 +248,8 @@ function ButtonsWrapper({ setLocation }) {
 
 function SummaryInfoWrapper({ todaysConsolidatedWeather, place, date }) {
   const [src, setSrc] = useState("");
-  
-  const {dayName, monthName, today} = dateShortener();
+
+  const { dayName, monthName, today } = dateShortener();
 
   useEffect(() => {
     weatherIconSelector(todaysConsolidatedWeather.weather_state_abbr, setSrc);
@@ -250,7 +275,9 @@ function SummaryInfoWrapper({ todaysConsolidatedWeather, place, date }) {
       <div className={styles.dateContainer}>
         <h5 className={styles.day}>Today</h5>
         <h5 className={styles.dot}>•</h5>
-        <h5 className={styles.date}>{dayName.substring(0,3)}, {today} {monthName.substring(0,4)}</h5>
+        <h5 className={styles.date}>
+          {dayName.substring(0, 3)}, {today} {monthName.substring(0, 4)}
+        </h5>
       </div>
       <h5 className={styles.place}>
         <Icon className={styles.markerIcon} size={1} path={mdiMapMarker} />{" "}
