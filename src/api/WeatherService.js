@@ -10,10 +10,13 @@ export const getWoeId = (lat, long, setWoeId) => {
     .catch((err) => console.log(err));
 };
 
-export const getConsolidatedWeatherReport = (woeid, setConsolidatedWeather) => {
+export const getConsolidatedWeatherReport = (woeid, setConsolidatedWeather, setLoading) => {
   axios.get(
     `https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/${woeid}`
   )
-  .then(res=>setConsolidatedWeather(res.data.consolidated_weather))
+  .then(res=>{
+    setConsolidatedWeather(res.data);
+    setLoading(false);
+  })
   .catch(err=>console.log(err));
 };
