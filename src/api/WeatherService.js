@@ -1,10 +1,9 @@
 import axios from "axios";
 
 export const getWoeId = (lat, long, setWoeId) => {
-  console.log('getwoeid')
   axios
     .get(
-      `https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/search/?lattlong=${lat},${long}`,
+      `${process.env.REACT_APP_API_BASE}location/search/?lattlong=${lat},${long}`,
       { "Content-Type": "text/plain" }
     )
     .then((res) => setWoeId(res.data[0].woeid))
@@ -16,10 +15,9 @@ export const getConsolidatedWeatherReport = (
   setConsolidatedWeather,
   setLoading
 ) => {
-  console.log('getconsolidatedweatherreport')
   axios
     .get(
-      `https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/${woeid}`
+      `${process.env.REACT_APP_API_BASE}location/${woeid}`
     )
     .then((res) => {
       setConsolidatedWeather(res.data);
@@ -28,9 +26,11 @@ export const getConsolidatedWeatherReport = (
     .catch((err) => console.log(err));
 };
 
-export const getLocationBasedOnName =(inputText, setResultData)=>{
-  console.log('getlocationbasedonname')
-  axios.get(`https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/search/?query=${inputText}`)
-  .then(res=>setResultData(res.data))
-  .catch(err=>console.log(err));
-}
+export const getLocationBasedOnName = (inputText, setResultData) => {
+  axios
+    .get(
+      `${process.env.REACT_APP_API_BASE}location/search/?query=${inputText}`
+    )
+    .then((res) => setResultData(res.data))
+    .catch((err) => console.log(err));
+};

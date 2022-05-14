@@ -1,0 +1,81 @@
+.backgroundPatternContainer {
+  width: 132%;
+  height: 376px;
+  position: absolute;
+  left: -111px;
+  top: 103px;
+}
+
+.cloud1 {
+  opacity: 8%;
+  left: 22px;
+  position: absolute;
+  width: 203px;
+}
+
+.cloud2 {
+  opacity: 5%;
+  position: absolute;
+  right: 0px;
+  top: 13px;
+}
+
+.cloud3 {
+  opacity: 5%;
+  position: absolute;
+  left: 0px;
+  bottom: 30px;
+  width: 248px;
+  height: 183px;
+}
+
+.cloud4 {
+  opacity: 8%;
+  position: absolute;
+  right: 69px;
+  bottom: 0px;
+  width: 147px;
+  height: 109px;
+}
+
+@media screen and (max-width: 1161px) {
+  .backgroundPatternContainer {
+    width: 132%;
+    height: 376px;
+    position: absolute;
+    left: -111px;
+    top: 103px;
+  }
+
+  .cloud1 {
+    opacity: 8%;
+    left: 22px;
+    position: absolute;
+    width: 203px;
+  }
+
+  .cloud2 {
+    opacity: 5%;
+    position: absolute;
+    right: 0px;
+    top: 13px;
+  }
+
+  .cloud3 {
+    opacity: 5%;
+    position: absolute;
+    left: 0px;
+    bottom: 30px;
+    width: 248px;
+    height: 183px;
+  }
+
+  .cloud4 {
+    opacity: 8%;
+    position: absolute;
+    right: 69px;
+    bottom: 0px;
+    width: 147px;
+    height: 109px;
+  }
+}

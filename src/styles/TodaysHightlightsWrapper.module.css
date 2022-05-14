@@ -149,7 +149,6 @@
   margin-bottom: 5px;
 }
 
-
 @media screen and (max-width: 1161px) {
   .container {
     margin-top: 72px;
@@ -157,7 +156,7 @@
     display: flex;
     flex-direction: column;
   }
-  
+
   .title {
     color: #e7e7eb;
     font-size: 24px;
@@ -171,7 +170,7 @@
     margin-top: 22px;
     margin-bottom: 6px;
   }
-  
+
   .aboveCardsContainer {
     display: flex;
     flex-direction: column;
@@ -180,7 +179,7 @@
     margin-top: 32px;
     margin-bottom: 0px;
   }
-  
+
   .windCard {
     width: 328px;
     height: 204px;
@@ -192,20 +191,20 @@
     justify-content: center;
     align-items: center;
   }
-  
+
   .speed {
     font-size: 64px;
     color: #e7e7eb;
     font-weight: 700;
     margin-bottom: 17px;
   }
-  
+
   .mph {
     font-size: 36px;
     color: #e7e7eb;
     font-weight: 500;
   }
-  
+
   .arrowIconWrapper {
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 100px;
@@ -216,14 +215,14 @@
     height: 30px;
     margin-right: 5.71px;
   }
-  
+
   .arrowIcon {
     border-radius: 50px;
     width: 30px;
     height: 30px;
     transform: rotate(-180deg);
   }
-  
+
   .compass {
     color: white;
     display: flex;
@@ -232,7 +231,7 @@
     font-weight: 500;
     margin-bottom: 25px;
   }
-  
+
   .humidityCard {
     width: 328px;
     height: 204px;
@@ -243,32 +242,32 @@
     align-items: center;
     margin-bottom: 32px;
   }
-  
+
   .humidityPercentage {
     font-size: 64px;
     font-weight: 700;
     margin-top: 5px;
   }
-  
+
   .percent {
     font-size: 36px;
     font-weight: 400;
   }
-  
+
   .bar {
     width: 229px;
     height: 8px;
     background-color: #e7e7eb;
     border-radius: 80px;
   }
-  
+
   .belowCardsContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-  
+
   .visibilityCard {
     width: 328px;
     height: 159px;
@@ -279,19 +278,19 @@
     flex-direction: column;
     align-items: center;
   }
-  
+
   .windSpeed {
     font-size: 64px;
     font-weight: 700;
     color: #e7e7eb;
   }
-  
+
   .miles {
     font-size: 26px;
     font-weight: 500;
     margin-bottom: 5px;
   }
-  
+
   .airPressureCard {
     width: 328px;
     height: 159px;
@@ -300,17 +299,16 @@
     flex-direction: column;
     align-items: center;
   }
-  
+
   .airPressure {
     font-size: 64px;
     font-weight: 700;
     color: #e7e7eb;
   }
-  
+
   .mb {
     font-size: 26px;
     font-weight: 500;
     margin-bottom: 5px;
   }
-
 }

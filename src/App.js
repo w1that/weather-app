@@ -1,21 +1,18 @@
 /* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
 import styles from "./styles/App.module.css";
-import bgPattern from "./assets/patternCloudItem.png";
-import { mdiCrosshairsGps } from "@mdi/js";
-import { mdiMapMarker } from "@mdi/js";
-import Icon from "@mdi/react";
-import { motion } from "framer-motion";
 import {
   getConsolidatedWeatherReport,
   getLocationBasedOnName,
   getWoeId,
 } from "./api/WeatherService";
-import { dateShortener, weatherIconSelector } from "./utils/utils";
 import DaysWrapper from "./components/DaysWrapper";
 import TodaysHightlightsWrapper from "./components/TodaysHightlightsWrapper";
 import LoadingScreen from "./components/LoadingScreen";
 import SearchMenu from "./components/SearchMenu";
+import BackgroundPattern from "./components/BackgroundPattern";
+import ButtonsWrapper from "./components/ButtonsWrapper";
+import SummaryInfoWrapper from "./components/SummaryInfoWrapper";
 
 function App() {
   const [location, setLocation] = useState({
@@ -39,6 +36,7 @@ function App() {
     }
   }, [searchInput]);
 
+  //remove input 3 seconds after clicking
   useEffect(() => {
     if (!searchFieldVisible) {
       setTimeout(() => {
@@ -47,6 +45,7 @@ function App() {
     }
   }, [searchFieldVisible]);
 
+  //check the button that takes users location info is pressed.
   useEffect(() => {
     if (location.coords.latitude === -1 && location.coords.longitude === -1) {
       console.log("location not taken");
@@ -69,11 +68,16 @@ function App() {
     <div className={styles.container}>
       {/* left hand */}
       <div className={styles.leftSideContainer}>
+        {/* clouds that fly at background */}
         <BackgroundPattern />
+
+        {/* search for places and location taker? button */}
         <ButtonsWrapper
           setLocation={setLocation}
           setSearchFieldVisible={setSearchFieldVisible}
         />
+
+        {/* content at left side */}
         <SummaryInfoWrapper
           todaysConsolidatedWeather={
             consolidatedWeather.consolidated_weather[0]
@@ -82,6 +86,7 @@ function App() {
           date={consolidatedWeather.time}
         />
 
+        {/* if user presses search for places, this one comes. */}
         <SearchMenu
           resultData={resultData}
           searchFieldVisible={searchFieldVisible}
@@ -109,121 +114,6 @@ function App() {
           />
         </div>
       </div>
-    </div>
-  );
-}
-
-// BACKGROUND PATTERN COMPONENT ---------------------
-
-function BackgroundPattern() {
-  return (
-    <div className={styles.backgroundPatternContainer}>
-      <motion.img
-        animate={{ x: [-150, 700] }}
-        transition={{ duration: 10, repeat: Infinity }}
-        className={styles.cloud1}
-        src={bgPattern}
-        alt="cloud1"
-      />
-      <motion.img
-        animate={{ x: [150, -700] }}
-        transition={{ duration: 12, delay: 0.8, repeat: Infinity }}
-        className={styles.cloud2}
-        src={bgPattern}
-        alt="cloud2"
-      />
-      <motion.img
-        animate={{ x: [-150, 700] }}
-        transition={{ duration: 8, delay: 0.4, repeat: Infinity }}
-        className={styles.cloud3}
-        src={bgPattern}
-        alt="cloud3"
-      />
-      <motion.img
-        animate={{ x: [150, -700] }}
-        transition={{ duration: 10, delay: 1, repeat: Infinity }}
-        className={styles.cloud4}
-        src={bgPattern}
-        alt="cloud4"
-      />
-    </div>
-  );
-}
-
-// BUTTONS WRAPPER COMPONENT  ---------------------
-
-function ButtonsWrapper({ setLocation, setSearchFieldVisible }) {
-  function searchForLocation() {
-    window.navigator.geolocation.getCurrentPosition(setLocation, console.log);
-  }
-
-  return (
-    <div className={styles.buttonsWrapper}>
-      <motion.button
-        onClick={() => setSearchFieldVisible(true)}
-        whileHover={{ scale: 1.1 }}
-        className={styles.searchPlacesButton}
-      >
-        Search for places
-      </motion.button>
-      <motion.button
-        whileHover={{ scale: 1.1 }}
-        className={styles.locationButton}
-        onClick={searchForLocation}
-      >
-        <Icon
-          className={styles.crossHairIcon}
-          color="#E7E7EB"
-          path={mdiCrosshairsGps}
-          title="User Profile"
-          size={1}
-          horizontal
-          vertical
-        ></Icon>
-      </motion.button>
-    </div>
-  );
-}
-
-// SUMMARY INFO WRAPPER COMPONENT  ---------------------
-
-function SummaryInfoWrapper({ todaysConsolidatedWeather, place, date }) {
-  const [src, setSrc] = useState("");
-
-  const { dayName, monthName, today } = dateShortener();
-
-  useEffect(() => {
-    weatherIconSelector(todaysConsolidatedWeather.weather_state_abbr, setSrc);
-  }, []);
-
-  return (
-    <div className={styles.summaryInfoContainer}>
-      <motion.img
-        whileHover={{ x: [0, -10, 10, 0] }}
-        className={styles.todaysConditionImage}
-        src={src}
-        width={202}
-        height={234}
-        alt="daily weather icon"
-      />
-      <h5 className={styles.numericTemperature}>
-        {todaysConsolidatedWeather.the_temp.toFixed(0)}
-        <span className={styles.temperatureSymbol}>°C</span>
-      </h5>
-      <h5 className={styles.conditionTitle}>
-        {todaysConsolidatedWeather.weather_state_name}
-      </h5>
-      <div className={styles.dateContainer}>
-        <h5 className={styles.day}>Today</h5>
-        <h5 className={styles.dot}>•</h5>
-        <h5 className={styles.date}>
-          {dayName.substring(0, 3)}, {today} {monthName.substring(0, 4)}
-        </h5>
-      </div>
-      <h5 className={styles.place}>
-        <Icon className={styles.markerIcon} size={1} path={mdiMapMarker} />{" "}
-        {place}
-      </h5>
     </div>
   );
 }

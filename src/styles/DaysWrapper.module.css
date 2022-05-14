@@ -9,7 +9,7 @@
     width: 266px;
     /* width: 100%; */
     display: grid;
-    grid-template-columns: auto  auto;
+    grid-template-columns: auto auto;
     grid-gap: 26px;
     /* flex-direction: row; */
     /* flex-wrap: wrap; */

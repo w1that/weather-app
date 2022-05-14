@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { mdiChevronRight } from "@mdi/js";
 import Icon from "@mdi/react";
-import styles from '../styles/SearchResult.module.css'
+import styles from "../styles/SearchResult.module.css";
 
 export default function SearchResult({
   result,
