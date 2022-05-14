@@ -3,3 +3,15 @@
   display: flex;
   justify-content: space-between;
 }
+
+@media screen and (max-width: 1161px) {
+  .container {
+    width: 266px;
+    /* width: 100%; */
+    display: grid;
+    grid-template-columns: auto  auto;
+    grid-gap: 26px;
+    /* flex-direction: row; */
+    /* flex-wrap: wrap; */
+  }
+}

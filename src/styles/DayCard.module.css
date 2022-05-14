@@ -43,3 +43,53 @@
   font-weight: 500;
   margin-right: 21px;
 }
+
+
+@media screen and (max-width: 1161px) {
+.container {
+  /* {background:'white', width:120, height:177} */
+  background-color: #1e213a;
+  width: 120px;
+  height: 177px;
+  position: relative;
+
+}
+
+.innerContainer {
+  padding-top: 18px;
+  padding-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.date {
+  color: #e7e7eb;
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.temperaturesContainer {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 18px;
+}
+
+.maxTemperature {
+  color: #e7e7eb;
+  font-size: 16px;
+  font-weight: 500;
+  margin-left: 20px;
+}
+
+.minTemperature {
+  color: #a09fb1;
+  font-size: 16px;
+  font-weight: 500;
+  margin-right: 21px;
+}
+}

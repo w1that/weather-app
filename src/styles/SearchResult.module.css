@@ -1,0 +1,14 @@
+.container{
+    background-color: #1e213a;
+    border: 1px solid #1E213A;
+    padding: 23px 22px;
+    color:#E7E7EB ;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: left;
+    cursor: pointer;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

@@ -1,6 +1,7 @@
 import axios from "axios";
 
 export const getWoeId = (lat, long, setWoeId) => {
+  console.log('getwoeid')
   axios
     .get(
       `https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/search/?lattlong=${lat},${long}`,
@@ -15,6 +16,7 @@ export const getConsolidatedWeatherReport = (
   setConsolidatedWeather,
   setLoading
 ) => {
+  console.log('getconsolidatedweatherreport')
   axios
     .get(
       `https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/${woeid}`
@@ -25,3 +27,10 @@ export const getConsolidatedWeatherReport = (
     })
     .catch((err) => console.log(err));
 };
+
+export const getLocationBasedOnName =(inputText, setResultData)=>{
+  console.log('getlocationbasedonname')
+  axios.get(`https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/search/?query=${inputText}`)
+  .then(res=>setResultData(res.data))
+  .catch(err=>console.log(err));
+}

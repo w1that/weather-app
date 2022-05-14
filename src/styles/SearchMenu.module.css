@@ -1,0 +1,178 @@
+.contentWrapper {
+    margin-top: 45px;
+    padding-left: 13px;
+    margin-right: 13px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .searchBarWrapper {
+    width: 100%;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+  }
+
+  
+  .searchInput {
+    border: 1px solid #e7e7eb;
+    background-color: #1e213a;
+    color: #fff;
+    padding: 14px 49px;
+    font-size: 16px;
+    width: 160px;
+    flex: 2;
+    font-weight: 500;
+  }
+
+  .searchInput:focus {
+    outline: none;
+  }
+
+  .searchIcon {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+  }
+
+  .searchButton {
+    background-color: #3c47e9;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 14px 14px 15px 19px;
+    border: 0px;
+    flex: 1;
+    margin-left: 12px;
+    color: #e7e7eb;
+    cursor: pointer;
+  }
+
+  .searchMenuContainer {
+    z-index: 4;
+    position: absolute;
+    background-color: #1e213a;
+    height: 100vh;
+    width: 100%;
+  }
+  
+  .elementsWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .closeButtonContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  
+  .closeButton {
+    display: flex;
+    background-color: #1e213a;
+    border: 0px;
+    justify-content: center;
+    align-items: center;
+    margin-right: 53px;
+    margin-top: 19px;
+  }
+
+  @media screen and (max-width: 1161px) {
+
+    .contentWrapper {
+      margin-top: 45px;
+      padding-left: 13px;
+      margin-right: 13px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .searchMenuContainer {
+      z-index: 4;
+      position: fixed;
+      background-color: #1e213a;
+      height: auto;
+      width: 100%;
+    }
+  
+    .elementsWrapper {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .closeButtonContainer {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
+  
+    .closeButton {
+      display: flex;
+      background-color: #1e213a;
+      border: 0px;
+      justify-content: center;
+      align-items: center;
+      margin-right: 17px;
+      margin-top: 17px;
+    }
+  
+    
+    .searchBarWrapper {
+      width: 100%;
+      display: flex;
+      position: relative;
+      justify-content: space-between;
+    }
+  
+    .searchInput {
+      border: 1px solid #e7e7eb;
+      background-color: #1e213a;
+      color: #fff;
+      padding: 14px 49px;
+      font-size: 16px;
+      width: 160px;
+      font-weight: 500;
+    }
+  
+    .searchInput:focus {
+      outline: none;
+    }
+  
+    .searchIcon {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+    }
+  
+    .searchInput {
+      border: 1px solid #e7e7eb;
+      background-color: #1e213a;
+      color: #fff;
+      padding: 14px 49px;
+      font-size: 16px;
+      width: 160px;
+      flex: 2;
+      font-weight: 500;
+    }
+  
+    .searchButton {
+      background-color: #3c47e9;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 14px 14px 15px 19px;
+      border: 0px;
+      flex: 1;
+      margin-left: 12px;
+      color: #e7e7eb;
+      cursor: pointer;
+    }
+
+  }
