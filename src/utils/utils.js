@@ -37,7 +37,6 @@ export const dateShortener = () => {
 };
 
 export const weatherIconSelector = (weatherStateAbbr, setSrc) => {
-  console.log('weather ıcon selector')
   switch (weatherStateAbbr) {
     case "sn":
       setSrc(sn);

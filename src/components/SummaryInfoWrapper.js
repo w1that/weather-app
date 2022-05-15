@@ -10,9 +10,6 @@ export default function SummaryInfoWrapper({
   place,
   date,
 }) {
-
-  console.log(todaysConsolidatedWeather)
-
   const [src, setSrc] = useState("");
 
   const { dayName, monthName, today } = dateShortener();

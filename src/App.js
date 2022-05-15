@@ -25,6 +25,8 @@ function App() {
   const [resultData, setResultData] = useState([]);
   const [loading, setLoading] = useState(true);
 
+  console.log(consolidatedWeather);
+
   // make api call to get results of entered text
   useEffect(() => {
     if (searchInput.length >= 3 && resultData.length === 0) {
@@ -52,7 +54,12 @@ function App() {
     } else {
       if (woeId !== 0) {
         setLoading(true);
-        getWoeId(location.coords.latitude, location.coords.longitude, setWoeId, setLoading);
+        getWoeId(
+          location.coords.latitude,
+          location.coords.longitude,
+          setWoeId,
+          setLoading
+        );
       }
     }
   }, [location.coords.latitude, location.coords.longitude, woeId]);
@@ -60,6 +67,7 @@ function App() {
   useEffect(() => {
     getConsolidatedWeatherReport(woeId, setConsolidatedWeather, setLoading);
   }, [woeId]);
+
 
   if (loading) {
     return <LoadingScreen />;

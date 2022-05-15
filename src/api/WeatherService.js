@@ -10,7 +10,7 @@ export const getWoeId = (lat, long, setWoeId, setLoading) => {
       setWoeId(res.data[0].woeid);
       setLoading(false);
     })
-    .catch((err) => console.log(err));
+    .catch((err) => console.log("err1", err));
 };
 
 export const getConsolidatedWeatherReport = (
@@ -18,6 +18,7 @@ export const getConsolidatedWeatherReport = (
   setConsolidatedWeather,
   setLoading
 ) => {
+  
   axios
     .get(
       `${process.env.REACT_APP_API_BASE}location/${woeid}`
@@ -26,7 +27,13 @@ export const getConsolidatedWeatherReport = (
       setConsolidatedWeather(res.data);
       setLoading(false);
     })
-    .catch((err) => console.log(err));
+    .catch((err) => {
+      if(err.message.includes('429')){
+        alert('Too Many Requests. Continue with https://weather-app-w1that.vercel.app/app-w-fake-data');
+      }
+      
+      
+    });
 };
 
 export const getLocationBasedOnName = (inputText, setResultData) => {
@@ -35,5 +42,5 @@ export const getLocationBasedOnName = (inputText, setResultData) => {
       `${process.env.REACT_APP_API_BASE}location/search/?query=${inputText}`
     )
     .then((res) => setResultData(res.data))
-    .catch((err) => console.log(err));
+    .catch((err) => console.log("err3", err));
 };
