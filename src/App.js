@@ -51,7 +51,8 @@ function App() {
       console.log("location not taken");
     } else {
       if (woeId !== 0) {
-        getWoeId(location.coords.latitude, location.coords.longitude, setWoeId);
+        setLoading(true);
+        getWoeId(location.coords.latitude, location.coords.longitude, setWoeId, setLoading);
       }
     }
   }, [location.coords.latitude, location.coords.longitude, woeId]);
