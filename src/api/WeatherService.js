@@ -8,7 +8,7 @@ export const getWoeId = (lat, long, setWoeId, setLoading) => {
     )
     .then((res) => {
       setWoeId(res.data[0].woeid);
-      setLoading(false);
+      // setLoading(false);
     })
     .catch((err) => console.log("err1", err));
 };
@@ -18,7 +18,7 @@ export const getConsolidatedWeatherReport = (
   setConsolidatedWeather,
   setLoading
 ) => {
-  
+  console.log('api')
   axios
     .get(
       `${process.env.REACT_APP_API_BASE}location/${woeid}`
@@ -31,8 +31,6 @@ export const getConsolidatedWeatherReport = (
       if(err.message.includes('429')){
         alert('Too Many Requests. Continue with https://weather-app-w1that.vercel.app/app-w-fake-data');
       }
-      
-      
     });
 };
 
